@@ -18,12 +18,21 @@ console.log('prezzo base', prezzoBase, '€');
 let prezzoFinale;
 let sconto;
 
+if (passengerAge < 18) {
+    sconto = ((prezzoBase / 100) * 20);
+    console.log('sconto', '20%', sconto);
+    prezzoFinale = prezzoBase - sconto;
+}
+else if (passengerAge >= 65) {
+    sconto = ((prezzoBase / 100) * 40);
+    console.log('sconto', '40%', sconto);
+    prezzoFinale = prezzoBase - sconto;
+}
 
-
-
-
-//solo senza sconto
-prezzoFinale = prezzoBase;
+else {
+    prezzoFinale = prezzoBase;
+    console.log('Prezzo intero', prezzoFinale);
+}
 
 document.getElementById('prezzo-biglietto').innerHTML = '€' + prezzoFinale;
 
